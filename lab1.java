@@ -1,3 +1,5 @@
+package ua.lviv.IoT.lab1_Java;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -36,29 +38,21 @@ public class Main {
         protected int amountOfPages;
 
         public Printer(String name, int numberOfPagesPerMinute, double price, String model, double weight, String colorOfPrinting, int amountOfPages) {
-            this(name, numberOfPagesPerMinute, price, model, weight);
-            this.colorOfPrinting = colorOfPrinting;
-            this.amountOfPages = amountOfPages;
-        }
-
-        public Printer(String name, int numberOfPagesPerMinute, double price, String model, double weight) {
             this.name = name;
             this.numberOfPagesPerMinute = numberOfPagesPerMinute;
             this.price = price;
             this.model = model;
             this.weight = weight;
+            this.colorOfPrinting = colorOfPrinting;
+            this.amountOfPages = amountOfPages;
+        }
+
+        public Printer(String name, int numberOfPagesPerMinute, double price, String model, double weight) {
+            this(name, numberOfPagesPerMinute, price, model, weight, null, 0);
         }
 
         public Printer() {
             this(null, 0, 0, null, 0, null, 0);
-        }
-
-        public static double printStaticWeight() {
-            return weight;
-        }
-
-        public double printWeight() {
-            return weight;
         }
 
         public String toString() {
@@ -75,6 +69,14 @@ public class Main {
             this.weight = weight;
             this.colorOfPrinting = colorOfPrinting;
             this.amountOfPages = amountOfPages;
+        }
+
+        public static double printStaticWeight() {
+            return weight;
+        }
+
+        public double printWeight() {
+            return weight;
         }
 
         public void setName(String newName) {
